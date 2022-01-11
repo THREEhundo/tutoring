@@ -20,14 +20,14 @@ import { ELearning } from './assets/index.js';
 
 function App() {
   return (
-    <div className="bg-gray-700 text-white w-screen h-screen container px-4">
+    <div className="bg-white text-light-green w-screen h-screen container px-4">
       <Header />
     </div>
   );
 }
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-8 h-24 text-white">
+    <header className="flex items-center justify-between px-8 h-24">
       <HomeIcon />
       <Hamburger />
     </header>
@@ -45,14 +45,14 @@ const Hamburger = () => (
     <div className="w-6 flex items-center justify-center relative">
       <span
         // x-bind:class="open ? 'translate-y-0 rotate-45' : '-translate-y-2'"
-        className="-translate-y-2 transform transition w-full h-px bg-teal absolute"></span>
+        className="-translate-y-2 transform transition w-full h-0.5 bg-teal absolute"></span>
       <span
         // x-bind:class="open ? 'opacity-0 translate-x-3' : 'opacity-100'"
-        className="translate-x-3 transform transition w-full h-px bg-pale-orange absolute"></span>
+        className="translate-x-3 transform transition w-full h-0.5 bg-pale-orange absolute"></span>
 
       <span
         // x-bind:class="open ? 'translate-y-0 -rotate-45' : 'translate-y-2'"
-        className="translate-y-2 transform transition w-full h-px bg-light-green absolute"></span>
+        className="translate-y-2 transform transition w-full h-0.5 bg-light-green absolute"></span>
     </div>
   </button>
 );
