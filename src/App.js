@@ -1,6 +1,5 @@
 import React from 'react';
 import { ELearning } from './assets/index.js';
-import './App.css';
 
 /**
  * Light Color Palette
