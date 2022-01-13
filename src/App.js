@@ -36,11 +36,14 @@ import Header from './components/header/Header';
  * 3. remove body styling and turn into a div instead that covers the whole document.
  * 4. Add animation to Dar/Light icons & Hamburger Menu
  * 	4.1.0 Use template literals to change className for events
- *	4.2 For animation to center translate scale y to center X
+ *	4.2.0 For animation to center translate scale y to center X
+ * 	4.2.1 Increased width of span to retain size after animation
+ * 	4.2.3 When using translate to animate return back to 0 to center spans
+ *
  */
 function App() {
 	return (
-		<div className='bg-white dark:bg-midnight text-light-green dark:text-blue-oyster w-screen h-screen container px-4'>
+		<div className='bg-white dark:bg-midnight text-light-green dark:text-blue-oyster w-screen h-screen container px-1 m-auto'>
 			<Header />
 		</div>
 	);
