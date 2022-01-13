@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Background = ({ children }) => (
-	<body className="bg-white dark:bg-midnight transition-all">
+	<div className='bg-white dark:bg-midnight transition-all m-0 p-0 min-h-full'>
 		{children}
-	</body>
-)
+	</div>
+);
 
 export default Background;
