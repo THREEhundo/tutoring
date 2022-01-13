@@ -1,5 +1,5 @@
 import React from 'react';
-import { ELearning } from './assets/index.js';
+import Header from './components/header/Header';
 
 /**
  * Light Color Palette
@@ -18,7 +18,7 @@ import { ELearning } from './assets/index.js';
  *
  */
 
-/**
+/** 1/11/22
   * 1. Light & Dark Mode
   *   i.    tailwind config class -> dark 
   *   ii.   add dark theme to existing components
@@ -30,6 +30,14 @@ import { ELearning } from './assets/index.js';
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
   */
+/** 1/12/22
+ * 1. Add margin left to light/dark icons
+ * 2. Refine Google Searches - be concise
+ * 3. remove body styling and turn into a div instead that covers the whole document.
+ * 4. Add animation to Dar/Light icons & Hamburger Menu
+ * 	4.1.0 Use template literals to change className for events
+ *	4.2 For animation to center translate scale y to center X
+ */
 function App() {
 	return (
 		<div className='bg-white dark:bg-midnight text-light-green dark:text-blue-oyster w-screen h-screen container px-4'>
@@ -37,36 +45,4 @@ function App() {
 		</div>
 	);
 }
-const Header = () => {
-	return (
-		<header className='flex items-center justify-between px-8 h-24'>
-			<HomeIcon />
-			<Hamburger />
-		</header>
-	);
-};
-
-const HomeIcon = () => (
-	<div className='rounded-full w-fit'>
-		<img src={ELearning} alt='home-link' className='w-16 mx-auto' />
-	</div>
-);
-
-const Hamburger = () => (
-	<button className='flex items-center space-y-2 focus:outline-none'>
-		<div className='w-6 flex items-center justify-center relative'>
-			<span
-				// x-bind:class="open ? 'translate-y-0 rotate-45' : '-translate-y-2'"
-				className='-translate-y-2 transform transition w-full h-0.5 bg-teal absolute'></span>
-			<span
-				// x-bind:class="open ? 'opacity-0 translate-x-3' : 'opacity-100'"
-				className='translate-x-3 transform transition w-full h-0.5 bg-pale-orange absolute'></span>
-
-			<span
-				// x-bind:class="open ? 'translate-y-0 -rotate-45' : 'translate-y-2'"
-				className='translate-y-2 transform transition w-full h-0.5 bg-light-green absolute'></span>
-		</div>
-	</button>
-);
-
 export default App;

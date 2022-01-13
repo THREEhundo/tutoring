@@ -4,14 +4,12 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from './color-theme/ThemeContext';
 import Background from './color-theme/Background';
-import Toggle from './color-theme/ThemeToggle';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider>
 			<Background>
-				<Toggle />
 				<App />
 			</Background>
 		</ThemeProvider>
