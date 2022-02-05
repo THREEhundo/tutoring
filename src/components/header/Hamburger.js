@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Hamburger = () => {
-	const [openMenu, setMenu] = useState(false);
+const Hamburger = ({ handleClick, openMenu }) => {
+	// const [openMenu, setMenu] = useState(false);
 	// triple bars
 	const closedTopBar = '-translate-y-2 w-6';
 	const closedMiddleBar = 'opacity-100 w-6';
@@ -13,8 +13,8 @@ const Hamburger = () => {
 
 	return (
 		<button
-			onClick={() => setMenu(!openMenu)}
-			className={`md:hidden w-12 flex items-center space-y-2 focus:outline-none`}>
+			onClick={() => handleClick()}
+			className={`lg:hidden w-12 flex items-center space-y-2 outline-none focus:outline-none`}>
 			<div className={`w-12 flex items-center justify-center`}>
 				<span
 					className={`${

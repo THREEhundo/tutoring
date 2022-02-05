@@ -4,6 +4,9 @@ const getInitialTheme = () => {
 	if (typeof window !== 'undefined' && window.localStorage) {
 		const storedPrefs = window.localStorage.getItem('color-theme');
 		if (typeof storedPrefs === 'string') {
+			if (storedPrefs === 'undefined') {
+				return 'dark';
+			}
 			return storedPrefs;
 		}
 
@@ -12,20 +15,22 @@ const getInitialTheme = () => {
 			return 'dark';
 		}
 	}
-	return 'light'; // light theme as the default;
+	return 'dark'; // light theme as the default;
 };
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ initialTheme, children }) => {
 	const { Provider } = ThemeContext;
-	const [theme, setTheme] = useState(initialTheme);
+	const [theme, setTheme] = useState(getInitialTheme);
+	console.log(theme);
+	console.log(initialTheme);
 
 	const rawSetTheme = (rawTheme) => {
 		const root = window.document.documentElement;
 		const isDark = rawTheme === 'dark';
 
-		root.classList.remove(isDark ? 'light' : 'dark');
+		root.classList.remove(isDark ? 'dark' : 'light');
 		root.classList.add(rawTheme);
 
 		localStorage.setItem('color-theme', rawTheme);

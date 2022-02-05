@@ -360,6 +360,7 @@ module.exports = {
 			DEFAULT: '1',
 		},
 		fontFamily: {
+			jetbrains: ["'JetbrainsMono'"],
 			sans: [
 				'ui-sans-serif',
 				'system-ui',
