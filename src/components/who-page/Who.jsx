@@ -34,17 +34,15 @@ const socialsArray = [
  * ! add custom id attriute for what page
  */
 
-export const Who = ({ children }) => {
-  return <AllPages>{children}</AllPages>;
+export const Who = () => {
+  return (
+    <section className="w-full text-khaki">
+      <WhoIntroSplash />
+      <SecondPage />
+      <FourthPage />
+    </section>
+  );
 };
-
-const AllPages = () => (
-  <section className="w-full text-khaki">
-    <WhoIntroSplash />
-    <SecondPage />
-    <FourthPage />
-  </section>
-);
 
 const WhoIntroSplash = ({ children }) => (
   <section id="intro" className="flex flex-col h-screen">

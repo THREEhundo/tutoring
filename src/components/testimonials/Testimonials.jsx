@@ -1,42 +1,40 @@
 import React from "react";
-import { DesktopContainer } from "../generic/DesktopContainer";
-import { HugeHeading } from "../generic/HugeHeading";
+import { Header } from "../header/Header";
 
 export const Testimonials = () => {
-	return (
-		<>
-			<FirstPage />
-			<SecondPage />
-		</>
-	);
+  return (
+    <section className="w-full">
+      <FirstPage />
+      <SecondPage />
+    </section>
+  );
 };
 
 const FirstPage = () => (
-	<DesktopContainer addClasses="flex flex-column flex-grow justify-center mx-auto">
-		<HugeHeading addClasses="text-center w-full">Testimonials</HugeHeading>
-		<img />
-	</DesktopContainer>
+  <section id="testimonials-splash" className="flex flex-col h-screen">
+    <Header color="text-light-green" />
+    <TestimonialsSplashContent />
+  </section>
+);
+const TestimonialsSplashContent = () => (
+  <main
+    id="testimonial-landing"
+    className="flex flex-col h-screen justify-center items-center"
+  >
+    <h1 className="text-center w-full text-9xl">Testimonials</h1>
+    <h2 className="font-bold text-3xl">Don't take my word for it!</h2>
+    <h3 className="text-xl font-bold">Here's what my students have to say!</h3>
+  </main>
 );
 
-/**
- * main container div rolls in from the left --> right
- * text in main container --> messages input bar apple iphone
- * iphone container expands upwards
- * top of iphone container shows group name 'students
- * shows profile roll in from left
- * shows profile roll in from right
- * shows profile roll in form left
- */
-const SecondPage = () => (
-	<section>
-		<TextInputiPhone />
-	</section>
-);
+const SecondPage = () => <section></section>;
 
 const TextInputiPhone = () => (
-	// Reverse column
-	<section>
-		<input type="text" />
-		{/* placeholder up arrow */}
-	</section>
+  // Reverse column
+  <section>
+    <input type="text" />
+    {/* placeholder up arrow */}
+  </section>
 );
+
+// TODO: TAKE OUT ALL CHILDREN

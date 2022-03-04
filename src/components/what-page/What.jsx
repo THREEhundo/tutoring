@@ -1,35 +1,7 @@
 import React from "react";
-import { HugeHeading } from "../generic/HugeHeading";
 import PinkAbstract3DModel from "../../assets/images/simon-lee-4wYxcWA5MbI-unsplash.jpg";
-import { GenericFirstScreenContent } from "../generic/GenericFirstScreenContainer";
-import { Figure } from "../generic/Figure";
 import { Header } from "../header/Header";
 
-/**
- * TODO
- * 1. Containers
-	  1.1 - Big Word Container
-	  1.2 - Academic Guide Container
-	  1.3 - Services Container 
-		1.4 - Experience Container
-	  1.5 - Results Container
- 
-	* TODO 
-	* Big Word --> h1 What 
-
-	* TODO 
-	* Academic Guide --> h6 Academic Guide --> svg / --> h2 Collaberate --> p --> p
-
-	* TODO 
-	* Services --> h6 Services  --> (h2 Discover --> ul >> li * 3) + (h2 Design --> ul >> li * 3) + (h2 Deploy --> ul >> li * 3) 
-
-	* TODO
-	* Experience --> h6 My Experience  --> svg  --> h2 Collabs  --> section >> profile avatar( Container(section) + img + chat bubble(section))
-
-	* TODO
-	* Results  --> svg  --> (ul >> li result category)
-	* ! Attribute 3D Model https://unsplash.com/photos/4wYxcWA5MbI?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
- */
 export const What = ({ children }) => {
   return (
     <section className="w-full">
