@@ -31,7 +31,7 @@ const LoginBtnThemeToggleContainer = () => {
 };
 
 const Logo = () => (
-  <a href="#home" className="pl-[6px]">
+  <a href="#home" className="pl-[6px] pr-10">
     <BrainCircuit className="w-16 h-16" />
   </a>
 );
