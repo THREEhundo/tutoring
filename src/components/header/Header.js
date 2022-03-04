@@ -2,8 +2,7 @@ import React from "react";
 import { ReactComponent as BrainCircuit } from "../../assets/icons/brain-circuit.svg";
 import Toggle from "./ThemeToggle";
 
-const navArray = ["Intro", "Calendar", "FAQ", "Process", "Testimonials"];
-const tempNavArray = ["intro", "who", "what", "calendar"];
+const navArr = ["intro", "who", "what", "calendar"];
 
 export const Header = ({ color }) => {
   const textColor = color ? color : "text-coral";
@@ -35,7 +34,7 @@ const Logo = () => (
 );
 
 const MainNav = () => {
-  const navItems = tempNavArray.map((item, index) => (
+  const navItems = navArr.map((item, index) => (
     <li key={index} className="px-3">
       <a href="#main-page">{item}</a>
     </li>
@@ -45,14 +44,14 @@ const MainNav = () => {
 };
 
 // TODO: Login ==> Contact
-const Button = () => (
-  <button
-    className="mr-10 ml-4 h-10 px-6 font-semibold bg-midnight text-coral rounded-3xl border-2 border-coral"
-    type="submit"
-  >
-    Login
-  </button>
-);
+//const Button = () => (
+//  <button
+//    className="mr-10 ml-4 h-10 px-6 font-semibold bg-midnight text-coral rounded-3xl border-2 border-coral"
+//    type="submit"
+//  >
+//    Login
+//  </button>
+//);
 
 // TODO: Contact Link
 const ContactLink = () => <a href="#contact">Contact</a>;

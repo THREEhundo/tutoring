@@ -1,14 +1,7 @@
 import React from "react";
 import { ContactModal } from "./components/contact-modal/ContactModal";
 import { Footer } from "./components/footer/Footer";
-import { Header } from "./components/header/Header";
-import Nav from "./components/header/Nav";
-import {
-  Intro,
-  IntroHeaderandFirstScreenContent,
-  IntroMainContentContainer,
-  TestimonialPage,
-} from "./components/intro-page/Intro";
+import { Intro } from "./components/intro-page/Intro";
 import { Testimonials } from "./components/testimonials/Testimonials";
 import { What } from "./components/what-page/What";
 import { Who } from "./components/who-page/Who";
@@ -24,7 +17,7 @@ import { Who } from "./components/who-page/Who";
  * Dark Color Palette
  *midnight #0B0742
  *navy #120C6E
- *blue_oyster #5E72EB
+ *blue-oyster #5E72EB
  *coral #FF9190
  *sunset #FDC094
  *
@@ -33,12 +26,12 @@ import { Who } from "./components/who-page/Who";
 function App() {
   return (
     <div className="dark:bg-midnight text-center text-light-green scroll-smooth">
-      {/*<Intro />*/}
+      <Intro />
       <Who id="bio" />
-      {/*<What id="first"></What>
-      <Testimonials />*/}
+      <What id="first"></What>
+      <Testimonials />
       <Footer />
-      {/*<ContactModal />*/}
+      <ContactModal />
     </div>
   );
 }

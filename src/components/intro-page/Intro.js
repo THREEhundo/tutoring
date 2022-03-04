@@ -42,10 +42,8 @@ const IntroSplash = ({ children }) => {
 const IntroContent = () => (
   <main
     id="landing"
-    className="flex flex-col flex-grow justify-center w-/35 h-screen min-h-full m-auto items-center"
+    className="flex flex-col flex-grow justify-center h-screen min-h-full m-auto items-center"
   >
-    {/*<SingleColumn addClasses="m-auto">*/}
-    {/* 100vh, bg-color break in middle */}
     <HugeHeading addClasses="z-10 text-coral">Eunice Baik</HugeHeading>
     <img
       src={ELearning}

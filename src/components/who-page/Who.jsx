@@ -1,5 +1,4 @@
 import React from "react";
-import { IntroHeaderandFirstScreenContent } from "../intro-page/Intro";
 import { Figure } from "../generic/Figure";
 import { HugeHeading } from "../generic/HugeHeading";
 import { SingleColumn } from "../generic/SingleColumn";
@@ -121,7 +120,7 @@ const FourthPage = () => (
 const SocialIcons = socialsArray.map((link, index) => {
   return (
     <li key={index} className="rounded-full border-2 border-khaki mx-1">
-      <a href="#">
+      <a href={`#${link.name}`}>
         <img className="w-8" src={link.icon} alt={link.name} />
       </a>
     </li>
@@ -134,13 +133,13 @@ const SocialsList = () => (
 
 const GenericAnimatedSpan = ({ children }) => <span>{children}</span>;
 
-const GenericStyledH6 = ({ children }) => (
-  <h6 className="uppercase text-xs pt-80 tracking-wide">{children}</h6>
-);
-
-const GenericStyledParagraph = ({ children }) => (
-  <p className="w-10/12 m-auto">{children}</p>
-);
+//const GenericStyledH6 = ({ children }) => (
+//  <h6 className="uppercase text-xs pt-80 tracking-wide">{children}</h6>
+//);
+//
+//const GenericStyledParagraph = ({ children }) => (
+//  <p className="w-10/12 m-auto">{children}</p>
+//);
 
 const GenericFullViewHeightContainer = ({ children, page, margin }) => (
   <section
