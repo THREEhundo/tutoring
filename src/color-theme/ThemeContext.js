@@ -15,7 +15,7 @@ const getInitialTheme = () => {
 			return 'dark';
 		}
 	}
-	return 'dark'; // light theme as the default;
+	return 'dark'; // dark theme as the default;
 };
 
 export const ThemeContext = createContext();
@@ -23,8 +23,6 @@ export const ThemeContext = createContext();
 export const ThemeProvider = ({ initialTheme, children }) => {
 	const { Provider } = ThemeContext;
 	const [theme, setTheme] = useState(getInitialTheme);
-	console.log(theme);
-	console.log(initialTheme);
 
 	const rawSetTheme = (rawTheme) => {
 		const root = window.document.documentElement;

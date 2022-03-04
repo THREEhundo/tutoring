@@ -3,6 +3,11 @@ module.exports = {
 	presets: [],
 	darkMode: 'class',
 	theme: {
+		extend: {
+			backgroundImage: {
+				'footer-banner': "url('/src/assets/images/footer-placeholder.jpeg')",
+			},
+		},
 		screens: {
 			sm: '640px',
 			md: '768px',
@@ -319,6 +324,7 @@ module.exports = {
 			auto: '1 1 auto',
 			initial: '0 1 auto',
 			none: 'none',
+			0.5: '1 0 50%',
 		},
 		flexBasis: ({ theme }) => ({
 			auto: 'auto',
@@ -657,6 +663,11 @@ module.exports = {
 			'6xl': '72rem',
 			'7xl': '80rem',
 			full: '100%',
+			'3/4': '75%',
+			'3/5': '60%',
+			'1/2': '50%',
+			'1/3': '33.3333%',
+			'1/4': '25%',
 			min: 'min-content',
 			max: 'max-content',
 			fit: 'fit-content',
