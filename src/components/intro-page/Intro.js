@@ -9,6 +9,8 @@ import { DesktopContainer } from "../generic/DesktopContainer";
 import { HugeHeading } from "../generic/HugeHeading";
 import { SingleColumn } from "../generic/SingleColumn";
 import { GenericFirstScreenContent } from "../generic/GenericFirstScreenContainer";
+import metalicaGirl from "../../assets/images/pexels-dillon-kydd-5794559.jpeg";
+import bucketsGirl from "../../assets/images/pexels-dominika-roseclay-1172784.jpeg";
 
 /**
  * ! Intro
@@ -95,10 +97,11 @@ const Description = () => (
 const ViewTestimonials = () => (
   <section
     id="testimonial-teaser-link"
-    className="flex flex-grow min-h-full flex-col h-screen  items-center"
+    className="flex min-h-full flex-col h-screen  items-center justify-center relative"
   >
-    <h2 className="text-2xl font-bold mt-20 mb-3">Testimonials</h2>
-    <a className="mb-96" href="#">
+    {/* mb-96 */}
+    <h2 className="text-7xl font-bold mt-20 mb-3 z-10">Testimonials</h2>
+    <a className="" href="#testimonials">
       <span className="border-solid border border-light-green py-2">
         <RightArrow />
       </span>
@@ -110,17 +113,55 @@ const ViewTestimonials = () => (
       </span>
     </a>
     <ZoomContainer />
+    <StaggeredImgContainer />
   </section>
 );
 
+// TODO: mt-20 ml-48
 const ZoomContainer = () => (
-  <div className="mt-20 ml-48">
+  <div className="">
     <Zoom className="w-40" />
   </div>
 );
 
 /* Vertically Align text with SVG's */
 const RightArrow = () => <CgArrowLongRight className="inline-flex w-10" />;
+
+// TODO: HOVER OVER IMG SHOW TEXT BUBBLE
+// TODO: ON SCROLL SHOW TESTIMONIAL TEXT
+const StaggeredImgContainer = () => (
+  <section className="flex absolute bottom-0 h-full">
+    <TopLeftCard />
+    <BttmRightCard />
+  </section>
+);
+
+const TopLeftCard = () => (
+  <section className="flex justify-start flex-col items-center my-10 relative">
+    <p className="w-1/2 bg-coral text-navy rounded-lg absolute -right-10 top-16">
+      Eunice helped me get into Harvard with a 5.9 GPA!
+    </p>
+    <img
+      src={metalicaGirl}
+      alt="testimonal headshot left side"
+      className="w-1/2 aspect-[640/906] border-8 border-x-4 border-coral rounded-full"
+    />
+  </section>
+);
+
+const BttmRightCard = () => (
+  <section className="flex justify-end flex-col items-center my-10 relative">
+    <img
+      src={bucketsGirl}
+      alt="testimonal headshot right side"
+      className="self-center w-1/2 mt-36 aspect-[640/906] border-8 border-x-4 border-blue-oyster rounded-full"
+    />
+    {/* TODO: FIX POSITIONING FOR SMALLER SCREENS */}
+    <p className="w-1/2 bg-blue-oyster text-navy rounded-lg absolute -left-20 bottom-16">
+      Eunice is worth her weight in GOLD!
+    </p>
+  </section>
+);
 /** 
  * ! TESTIMONIAL ANCHOR EXAMPLE
  * <a
