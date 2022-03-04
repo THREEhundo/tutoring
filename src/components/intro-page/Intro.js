@@ -2,13 +2,11 @@ import React from "react";
 //import { ReactComponent as ELearning } from '../../assets/icons/elearning.svg';
 import { ELearning } from "../../assets/index";
 import { ReactComponent as Zoom } from "../../assets/icons/zoom.svg";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+//import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Header } from "../header/Header";
 import { CgArrowLongRight } from "react-icons/cg";
 import { DesktopContainer } from "../generic/DesktopContainer";
 import { HugeHeading } from "../generic/HugeHeading";
-import { SingleColumn } from "../generic/SingleColumn";
-import { GenericFirstScreenContent } from "../generic/GenericFirstScreenContainer";
 import metalicaGirl from "../../assets/images/pexels-dillon-kydd-5794559.jpeg";
 import bucketsGirl from "../../assets/images/pexels-dominika-roseclay-1172784.jpeg";
 
@@ -22,37 +20,37 @@ import bucketsGirl from "../../assets/images/pexels-dominika-roseclay-1172784.jp
 // TODO: Snap container ==> <Intro /> snap-mandatory scroll-smooth snap-y snap-mandatory overflow-scroll
 export const Intro = () => (
   <section className="w-full">
-    <IntroHeaderandFirstScreenContent />
+    <IntroSplash />
     <IntroMainContentContainer />
     <ViewTestimonials />
   </section>
 );
 
-// TODO: Snap Item ==> <IntroHeaderandFirstScreenContent />  snap-always snap-start
-export const IntroHeaderandFirstScreenContent = ({ children }) => {
+// TODO: Snap Item ==> <IntroSplash />  snap-always snap-start
+export const IntroSplash = ({ children }) => {
   return (
     <section id="intro" className="flex flex-col ">
       {children}
       <Header />
-      <IntroFirstScreenContentNEEDTOREFACTOR />
+      <IntroContent />
     </section>
   );
 };
 // ! Fixing !
 // ! Figure out passing classes to SingleColumn and HugeHeader
 
-const IntroFirstScreenContentNEEDTOREFACTOR = () => (
+const IntroContent = () => (
   <main
     id="landing"
-    className="flex flex-col flex-grow justify-center w-/35 h-screen min-h-full m-auto"
+    className="flex flex-col flex-grow justify-center w-/35 h-screen min-h-full m-auto items-center"
   >
     {/*<SingleColumn addClasses="m-auto">*/}
     {/* 100vh, bg-color break in middle */}
-    <HugeHeading addClasses="">Eunice Baik</HugeHeading>
+    <HugeHeading addClasses="z-10 text-coral">Eunice Baik</HugeHeading>
     <img
       src={ELearning}
       alt="teacher coming out of a laptop"
-      className="mx-auto"
+      className="relative w-1/2 bottom-80"
     />
     {/*</SingleColumn>*/}
   </main>
@@ -68,7 +66,7 @@ const IntroFirstScreenContentNEEDTOREFACTOR = () => (
 export const IntroMainContentContainer = () => (
   <section
     id="main-content"
-    className="flex flex-grow justify-center min-h-full h-screen "
+    className="flex flex-grow justify-center min-h-full h-screen text-coral"
   >
     <DesktopContainer addClasses={"flex flex-col items-center"}>
       <Description />
@@ -97,18 +95,18 @@ const Description = () => (
 const ViewTestimonials = () => (
   <section
     id="testimonial-teaser-link"
-    className="flex min-h-full flex-col h-screen  items-center justify-center relative"
+    className="flex min-h-full flex-col h-screen  items-center justify-center relative text-coral"
   >
     {/* mb-96 */}
     <h2 className="text-7xl font-bold mt-20 mb-3 z-10">Testimonials</h2>
     <a className="" href="#testimonials">
-      <span className="border-solid border border-light-green py-2">
+      <span className="border-solid border border-light-teal py-2">
         <RightArrow />
       </span>
-      <span className="border-solid border border-light-green py-2 px-1 underline decoration-light-green">
+      <span className="border-solid border border-light-teal py-2 px-1 underline decoration-light-teal">
         VIEW TESTIMONIALS
       </span>
-      <span className="border-solid border border-light-green py-2">
+      <span className="border-solid border border-light-teal py-2">
         <RightArrow />
       </span>
     </a>
