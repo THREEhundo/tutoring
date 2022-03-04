@@ -6,8 +6,6 @@ const navArray = ["Intro", "Calendar", "FAQ", "Process", "Testimonials"];
 const tempNavArray = ["intro", "who", "what", "calendar"];
 
 export const Header = ({ color }) => {
-  const LoginBtn = () => Button();
-  console.log(color);
   const textColor = color ? color : "text-coral";
   return (
     <header

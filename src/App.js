@@ -33,10 +33,9 @@ import { Who } from "./components/who-page/Who";
 function App() {
   return (
     <div className="dark:bg-midnight text-center text-light-green scroll-smooth">
-      {/*<Header />*/}
-      <Intro />
-      {/*<Who id="bio" />
-      <What id="first"></What>
+      {/*<Intro />*/}
+      <Who id="bio" />
+      {/*<What id="first"></What>
       <Testimonials />*/}
       <Footer />
       {/*<ContactModal />*/}

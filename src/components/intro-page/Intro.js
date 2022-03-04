@@ -27,7 +27,7 @@ export const Intro = () => (
 );
 
 // TODO: Snap Item ==> <IntroSplash />  snap-always snap-start
-export const IntroSplash = ({ children }) => {
+const IntroSplash = ({ children }) => {
   return (
     <section id="intro" className="flex flex-col ">
       {children}

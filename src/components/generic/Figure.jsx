@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 export const Figure = ({ image, sourceLink, altDescription, artist }) => (
-	<figure>
-		<img src={image} alt={altDescription} />
-		<cite>
-			<a href={sourceLink}>{artist}</a>
-		</cite>
-	</figure>
+  <figure className="relative w-1/2 text-khaki">
+    <img className="h-3/4 m-auto" src={image} alt={altDescription} />
+    <cite>
+      <a href={sourceLink}>{artist}</a>
+    </cite>
+  </figure>
 );
