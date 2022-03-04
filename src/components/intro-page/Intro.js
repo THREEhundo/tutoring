@@ -10,32 +10,26 @@ import { HugeHeading } from "../generic/HugeHeading";
 import { SingleColumn } from "../generic/SingleColumn";
 import { GenericFirstScreenContent } from "../generic/GenericFirstScreenContainer";
 
-// TODO: scroll snap each page IntroHeaderandFirstScreenContent | IntroMainContentContainer | TestimonialPage
-// TODO: Snap container ==> <Intro />
-// TODO: Snap Item ==> <IntroHeaderandFirstScreenContent />
-// TODO: Snap Item ==> <IntroMainContentContainer />
-// TODO: Snap Item ==> <ViewTestimonials />
-
 /**
  * ! Intro
  * ? Header & Landing (1st Screen)
  * TODO
- * Seperate Header & Main (FirstScreenContent) height needs to be adjusted.
+ * Seperate Header & Main (FirstScreenContent) height needs to be adjusted. ✅
  */
 
-// TODO: Snap container ==> <Intro /> snap-mandatory scroll-smooth
+// TODO: Snap container ==> <Intro /> snap-mandatory scroll-smooth snap-y snap-mandatory overflow-scroll
 export const Intro = () => (
-  <section className="snap-y snap-mandatory overflow-scroll w-full h-screen ">
+  <section className="w-full">
     <IntroHeaderandFirstScreenContent />
     <IntroMainContentContainer />
     <ViewTestimonials />
   </section>
 );
 
-// TODO: Snap Item ==> <IntroHeaderandFirstScreenContent />  snap-always
+// TODO: Snap Item ==> <IntroHeaderandFirstScreenContent />  snap-always snap-start
 export const IntroHeaderandFirstScreenContent = ({ children }) => {
   return (
-    <section id="intro" className="flex flex-col snap-start">
+    <section id="intro" className="flex flex-col ">
       {children}
       <Header />
       <IntroFirstScreenContentNEEDTOREFACTOR />
@@ -68,11 +62,11 @@ const IntroFirstScreenContentNEEDTOREFACTOR = () => (
  *
  */
 
-// TODO: Snap Item ==> <IntroMainContentContainer /> snap-always
+// TODO: Snap Item ==> <IntroMainContentContainer /> snap-always snap-start
 export const IntroMainContentContainer = () => (
   <section
     id="main-content"
-    className="flex flex-grow justify-center min-h-full h-screen snap-start"
+    className="flex flex-grow justify-center min-h-full h-screen "
   >
     <DesktopContainer addClasses={"flex flex-col items-center"}>
       <Description />
@@ -97,11 +91,11 @@ const Description = () => (
 );
 
 // TODO: made page 100vh
-// TODO: Snap Item ==> <ViewTestimonials /> snap-always
+// TODO: Snap Item ==> <ViewTestimonials /> snap-always snap-start
 const ViewTestimonials = () => (
   <section
     id="testimonial-teaser-link"
-    className="flex flex-grow min-h-full flex-col h-screen snap-start items-center"
+    className="flex flex-grow min-h-full flex-col h-screen  items-center"
   >
     <h2 className="text-2xl font-bold mt-20 mb-3">Testimonials</h2>
     <a className="mb-96" href="#">
