@@ -12,7 +12,6 @@ export const Testimonials = () => {
 
 const FirstPage = () => (
   <section id="testimonials-splash" className="flex flex-col h-screen">
-    <Header color="text-light-green" />
     <TestimonialsSplashContent />
   </section>
 );

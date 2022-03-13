@@ -1,9 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as BrainCircuit } from "../../assets/icons/brain-circuit.svg";
+import { getNavLinks } from "../../data";
 import Toggle from "./ThemeToggle";
-
-const navArr = ["intro", "who", "what", "calendar"];
-
+// ?
+//const LogoGif = () => (
+//  <div className="w-96">
+//    <svg preserveAspectRatio="none" className="vL6BBg" viewBox="0 0 500 500">
+//      <path
+//        className="SQ2ADw"
+//        d="M250,0C111.92881254230167,0 0,111.92881254230164 0,250C0,388.07118745769833 111.92881254230161,500 250,500C388.0711874576983,500 500,388.07118745769833 500,250C500,111.92881254230167 388.07118745769833,0 250,0"
+//        fill="#f0ffa6"
+//      ></path>
+//    </svg>
+//    <svg preserveAspectRatio="none" className="vL6BBg" viewBox="0 0 500 500">
+//      <path
+//        className="SQ2ADw"
+//        d="M250,0C111.92881254230167,0 0,111.92881254230164 0,250C0,388.07118745769833 111.92881254230161,500 250,500C388.0711874576983,500 500,388.07118745769833 500,250C500,111.92881254230167 388.07118745769833,0 250,0"
+//        fill="#f0ffa6"
+//      ></path>
+//    </svg>
+//  </div>
+//);
 export const Header = ({ color }) => {
   const textColor = color ? color : "text-coral";
   return (
@@ -14,6 +32,7 @@ export const Header = ({ color }) => {
       <Logo />
       <MainNav />
       <LoginBtnThemeToggleContainer />
+      {/*<Outlet />*/}
     </header>
   );
 };
@@ -34,24 +53,14 @@ const Logo = () => (
 );
 
 const MainNav = () => {
-  const navItems = navArr.map((item, index) => (
-    <li key={index} className="px-3">
-      <a href="#main-page">{item}</a>
+  const navItems = getNavLinks().map((item, index) => (
+    <li key={item} className="px-3">
+      <Link to={item === "intro" ? `/` : `/${item}`}>{item}</Link>
     </li>
   ));
 
   return <ul className="flex">{navItems}</ul>;
 };
-
-// TODO: Login ==> Contact
-//const Button = () => (
-//  <button
-//    className="mr-10 ml-4 h-10 px-6 font-semibold bg-midnight text-coral rounded-3xl border-2 border-coral"
-//    type="submit"
-//  >
-//    Login
-//  </button>
-//);
 
 // TODO: Contact Link
 const ContactLink = () => <a href="#contact">Contact</a>;

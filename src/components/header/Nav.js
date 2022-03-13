@@ -1,76 +1,81 @@
-import React, { cloneElement, useState } from 'react';
-import Toggle from './ThemeToggle';
-import Hamburger from './Hamburger';
-import HomeIcon from './HomeIcon';
+import React, { cloneElement, useState } from "react";
+import Toggle from "./ThemeToggle";
+import Hamburger from "./Hamburger";
+import HomeIcon from "./HomeIcon";
+import { getNavLinks } from "../../data";
 
-const navArray = ['About', 'Calendar', 'FAQ', 'Process', 'Testimonials'];
+//const navArray = ["About", "Calendar", "FAQ", "Process", "Testimonials"];
+
 // create 2 nav lists
 const NavList = (openMenu) => {
-	const navItems = navArray.map((item, index, openMenu) => (
-		<li key={index} className='nav-item'>
-			<a
-				href={`#${item}`}
-				className={
-					'px-3 py-2 flex items-center uppercase font-black leading-snug hover:opacity-75 ' +
-					(openMenu ? '' : '')
-				}>
-				{item}
-			</a>
-		</li>
-	));
+  const navItems = getNavLinks().map((item, index, openMenu) => (
+    <li key={index} className="nav-item">
+      <a
+        href={`#${item}`}
+        className={
+          "px-3 py-2 flex items-center uppercase font-black leading-snug hover:opacity-75 " +
+          (openMenu ? "" : "")
+        }
+      >
+        {item}
+      </a>
+    </li>
+  ));
 
-	return (
-		<ul
-			className={
-				'flex flex-col lg:flex-row list-none lg:ml-auto justify-between dark:text-coral' +
-				(openMenu ? ' flex flex-col' : '')
-			}>
-			{navItems}
-		</ul>
-	);
+  return (
+    <ul
+      className={
+        "flex flex-col lg:flex-row list-none lg:ml-auto justify-between dark:text-coral" +
+        (openMenu ? " flex flex-col" : "")
+      }
+    >
+      {navItems}
+    </ul>
+  );
 };
 const Nav = () => {
-	const [openMenu, setMenu] = useState(false);
+  const [openMenu, setMenu] = useState(false);
 
-	const handleClick = () => setMenu(!openMenu);
+  const handleClick = () => setMenu(!openMenu);
 
-	// const Dropdown = NavLinks();
-	const Dropdown = cloneElement(NavLinks);
+  // const Dropdown = NavLinks();
+  const Dropdown = cloneElement(NavLinks);
 
-	return (
-		<header className='flex flex-wrap py-2'>
-			<div className='w-full px-4'>
-				<div className='relative flex items-center justify-between px-2 py-3'>
-					<section className='container px-4 mx-auto flex flex-wrap items-center justify-between'>
-						<nav className='relative flex flex-grow content-center justify-between lg:w-auto px-4 lg:static lg:flex lg:justify-between'>
-							<HomeIcon />
-							<div className='flex flex-wrap lg:flex-nowrap content-center min-w-min justify-between'>
-								<Toggle />
-								<Hamburger openMenu={openMenu} handleClick={handleClick} />
-								<NavLinks openMenu={openMenu} />
-							</div>
-						</nav>
-					</section>
-				</div>
-			</div>
-		</header>
-	);
+  return (
+    <header className="flex flex-wrap py-2">
+      <div className="w-full px-4">
+        <div className="relative flex items-center justify-between px-2 py-3">
+          <section className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <nav className="relative flex flex-grow content-center justify-between lg:w-auto px-4 lg:static lg:flex lg:justify-between">
+              <HomeIcon />
+              <div className="flex flex-wrap lg:flex-nowrap content-center min-w-min justify-between">
+                <Toggle />
+                <Hamburger openMenu={openMenu} handleClick={handleClick} />
+                <NavLinks openMenu={openMenu} />
+              </div>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Nav;
 
 const FlexBreakingInsert = () => (
-	<div className='basis-full h-0 lg:hidden'></div>
+  <div className="basis-full h-0 lg:hidden"></div>
 );
 
 const NavLinks = ({ openMenu }) => (
-	<div
-		className={
-			'lg:flex flex-grow items-center w-full dark:bg-navy ' +
-			(openMenu ? 'flex' : 'hidden')
-		}>
-		{NavList(openMenu)}
-	</div>
+  <div
+    className={
+      "lg:flex flex-grow items-center w-full dark:bg-navy " +
+      (openMenu ? "flex" : "hidden")
+    }
+  >
+    {NavList(openMenu)}
+  </div>
 );
 /**
  * Light Color Palette

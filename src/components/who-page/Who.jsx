@@ -47,7 +47,7 @@ export const Who = () => {
 const WhoIntroSplash = ({ children }) => (
   <section id="intro" className="flex flex-col h-screen">
     {children}
-    <Header color="text-khaki" />
+    {/*<Header color="text-khaki" />*/}
     <WhoIntroContent />
   </section>
 );

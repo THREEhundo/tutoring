@@ -1,8 +1,6 @@
 import React from "react";
-//import { ReactComponent as ELearning } from '../../assets/icons/elearning.svg';
 import { ELearning } from "../../assets/index";
 import { ReactComponent as Zoom } from "../../assets/icons/zoom.svg";
-//import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Header } from "../header/Header";
 import { CgArrowLongRight } from "react-icons/cg";
 import { DesktopContainer } from "../generic/DesktopContainer";
@@ -29,9 +27,8 @@ export const Intro = () => (
 // TODO: Snap Item ==> <IntroSplash />  snap-always snap-start
 const IntroSplash = ({ children }) => {
   return (
-    <section id="intro" className="flex flex-col ">
+    <section id="intro" className="flex flex-col items-center">
       {children}
-      <Header />
       <IntroContent />
     </section>
   );
@@ -45,12 +42,7 @@ const IntroContent = () => (
     className="flex flex-col flex-grow justify-center h-screen min-h-full m-auto items-center"
   >
     <HugeHeading addClasses="z-10 text-coral">Eunice Baik</HugeHeading>
-    <img
-      src={ELearning}
-      alt="teacher coming out of a laptop"
-      className="relative w-1/2 bottom-80"
-    />
-    {/*</SingleColumn>*/}
+    <img src={ELearning} alt="teacher coming out of a laptop" />
   </main>
 );
 

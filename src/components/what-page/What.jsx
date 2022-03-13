@@ -14,7 +14,7 @@ export const What = ({ children }) => {
 
 const FirstPage = () => (
   <section id="who-splash" className="flex flex-col">
-    <Header color="text-blue-oyster" />
+    {/*<Header />*/}
     <WhoSplashContent />
   </section>
 );
@@ -31,7 +31,7 @@ const WhoSplashContent = () => (
 const Pink3dBackground = () => (
   <figure className="w-3/4 text-khaki">
     <img
-      className="h-3/4 m-auto"
+      className="m-auto"
       src={PinkAbstract3DModel}
       alt="Pink Abstract 3D Model"
     />
