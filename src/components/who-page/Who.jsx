@@ -3,7 +3,6 @@ import { Figure } from "../generic/Figure";
 import { HugeHeading } from "../generic/HugeHeading";
 import { SingleColumn } from "../generic/SingleColumn";
 import Blue3DTerrain from "../../assets/images/simon-lee-V8_xGwr3isA-unsplash.jpg";
-import { Header } from "../header/Header";
 import JiHaePlaceholderPic from "../../assets/images/215-400x600-grayscale.jpeg";
 import { Facebook, LinkedIn, Gmail } from "../../assets/index";
 
@@ -36,7 +35,7 @@ const socialsArray = [
 
 export const Who = () => {
   return (
-    <section className="w-full text-khaki">
+    <section className="w-full text-royal-purple">
       <WhoIntroSplash />
       <SecondPage />
       <FourthPage />
@@ -47,17 +46,16 @@ export const Who = () => {
 const WhoIntroSplash = ({ children }) => (
   <section id="intro" className="flex flex-col h-screen">
     {children}
-    {/*<Header color="text-khaki" />*/}
     <WhoIntroContent />
   </section>
 );
 
 const WhoIntroContent = () => (
   <main id="id" className="flex flex-col justify-center w-/35  items-center">
-    <HugeHeading addClasses="text-khaki z-10 relative top-1/3 left-[50px]">
-      Who.
+    <HugeHeading addClasses="top-1/3 left-[50px]">
+      About Me / My Process
     </HugeHeading>
-    <Blue3DImage />
+    {/*<Blue3DImage />*/}
   </main>
 );
 
@@ -85,7 +83,7 @@ const FourthPage = () => (
   <section
     id="third-page"
     //flex flex-wrap flex-grow flex-col
-    className=" h-screen w-3/5	m-auto justify-between columns-2"
+    className=" h-screen px-8	m-auto justify-between columns-2"
   >
     <section className="break-after-column">
       <h6 className="flex-0.5 uppercase text-xs text-left">

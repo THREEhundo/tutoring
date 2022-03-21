@@ -1,12 +1,12 @@
 import React from "react";
 import { ELearning } from "../../assets/index";
 import { ReactComponent as Zoom } from "../../assets/icons/zoom.svg";
-import { Header } from "../header/Header";
 import { CgArrowLongRight } from "react-icons/cg";
 import { DesktopContainer } from "../generic/DesktopContainer";
 import { HugeHeading } from "../generic/HugeHeading";
 import metalicaGirl from "../../assets/images/pexels-dillon-kydd-5794559.jpeg";
 import bucketsGirl from "../../assets/images/pexels-dominika-roseclay-1172784.jpeg";
+import euniceBaikLogo from "../../assets/euniceBaikLogo.mp4";
 
 /**
  * ! Intro
@@ -17,7 +17,7 @@ import bucketsGirl from "../../assets/images/pexels-dominika-roseclay-1172784.jp
 
 // TODO: Snap container ==> <Intro /> snap-mandatory scroll-smooth snap-y snap-mandatory overflow-scroll
 export const Intro = () => (
-  <section className="w-full">
+  <section className="w-full text-light-red">
     <IntroSplash />
     <IntroMainContentContainer />
     <ViewTestimonials />
@@ -41,8 +41,10 @@ const IntroContent = () => (
     id="landing"
     className="flex flex-col flex-grow justify-center h-screen min-h-full m-auto items-center"
   >
-    <HugeHeading addClasses="z-10 text-coral">Eunice Baik</HugeHeading>
-    <img src={ELearning} alt="teacher coming out of a laptop" />
+    {/*<HugeHeading>Eunice Baik</HugeHeading>*/}
+    <video playsInline autoPlay muted loop className="z-1 w-3/4 object-cover">
+      <source src={euniceBaikLogo} type="video/mp4" id="loop"></source>
+    </video>
   </main>
 );
 
@@ -56,7 +58,7 @@ const IntroContent = () => (
 export const IntroMainContentContainer = () => (
   <section
     id="main-content"
-    className="flex flex-grow justify-center min-h-full h-screen text-coral"
+    className="flex flex-grow justify-center min-h-full h-screen"
   >
     <DesktopContainer addClasses={"flex flex-col items-center"}>
       <Description />
@@ -85,10 +87,10 @@ const Description = () => (
 const ViewTestimonials = () => (
   <section
     id="testimonial-teaser-link"
-    className="flex min-h-full flex-col h-screen  items-center justify-center relative text-coral"
+    className="flex min-h-full flex-col h-screen  items-center justify-center relative text-sunset"
   >
     {/* mb-96 */}
-    <h2 className="text-7xl font-bold mt-20 mb-3 z-10">Testimonials</h2>
+    <h2 className="text-7xl font-bold mt-20 mb-3">Testimonials</h2>
     <a className="" href="#testimonials">
       <span className="border-solid border border-light-teal py-2">
         <RightArrow />

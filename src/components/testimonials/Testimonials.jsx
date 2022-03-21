@@ -1,9 +1,6 @@
-import React from "react";
-import { Header } from "../header/Header";
-
 export const Testimonials = () => {
   return (
-    <section className="w-full">
+    <section className="w-full text-seafoam">
       <FirstPage />
       <SecondPage />
     </section>
@@ -26,14 +23,27 @@ const TestimonialsSplashContent = () => (
   </main>
 );
 
-const SecondPage = () => <section></section>;
-
-const TextInputiPhone = () => (
-  // Reverse column
-  <section>
-    <input type="text" />
-    {/* placeholder up arrow */}
+const SecondPage = () => (
+  <section className="flex flex-col justify-center items-start ">
+    <Bubble />
+    <p className="">🧑🏻‍💻</p>
+    <Bubble />
+    <p className="">👩🏼‍💻</p>
+    <Bubble />
+    <p className="">👩🏽‍💻</p>
   </section>
 );
 
-// TODO: TAKE OUT ALL CHILDREN
+const Bubble = (pointDirection, bg, txt) => {
+  return (
+    // TODO: Point is at the bottom half of the rounded corner.
+
+    <div
+      className={`my-2 py-4 px-4 bg-blue-500 text-white rounded-full w-max ${pointDirection}`}
+    >
+      Testimonial Message Here...
+    </div>
+  );
+};
+
+// TODO: iPhone chat bubble <- ->

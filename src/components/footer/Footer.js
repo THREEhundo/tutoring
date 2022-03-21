@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="dark:bg-midnight text-light-green flex flex-wrap items-center py-10 bg-white justify-around"
+      className="bg-pale-orange flex flex-wrap items-center py-10 justify-around"
     >
       <Banner />
       <EuniceFooterInfo />
@@ -30,7 +30,7 @@ export const Footer = () => {
 
 const Banner = () => {
   return (
-    <section className="bg-gradient-to-t from-black to-white z-10">
+    <section className="bg-gradient-to-t from-black to-white">
       <img
         className="w-screen flex z-1 pb-10"
         src={FooterBanner}

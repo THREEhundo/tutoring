@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as BrainCircuit } from "../../assets/icons/brain-circuit.svg";
 import { getNavLinks } from "../../data";
+import Hamburger from "./Hamburger";
 import Toggle from "./ThemeToggle";
 // ?
 //const LogoGif = () => (
@@ -22,26 +23,31 @@ import Toggle from "./ThemeToggle";
 //    </svg>
 //  </div>
 //);
-export const Header = ({ color }) => {
+export const Header = ({ color, openMenu, handleClick }) => {
   const textColor = color ? color : "text-coral";
   return (
     <header
       id="header"
       className={`uppercase ${textColor} flex py-3 px-10 justify-between items-center`}
     >
+      {/*{openMenu ? <Logo className="invisible" /> : <Logo />}*/}
       <Logo />
-      <MainNav />
-      <LoginBtnThemeToggleContainer />
+      {/*<MainNav />*/}
+      <LoginBtnThemeToggleContainer
+        openMenu={openMenu}
+        handleClick={handleClick}
+      />
       {/*<Outlet />*/}
     </header>
   );
 };
 
-const LoginBtnThemeToggleContainer = () => {
+const LoginBtnThemeToggleContainer = ({ openMenu, handleClick }) => {
   return (
     <div className="flex flex-nowrap items-center gap-x-1">
-      <ContactLink />
-      <Toggle />
+      <Hamburger openMenu={openMenu} handleClick={handleClick} />
+      {/*<ContactLink />*/}
+      {/*<Toggle />*/}
     </div>
   );
 };
@@ -52,19 +58,111 @@ const Logo = () => (
   </a>
 );
 
-const MainNav = () => {
-  const navItems = getNavLinks().map((item, index) => (
-    <li key={item} className="px-3">
-      <Link to={item === "intro" ? `/` : `/${item}`}>{item}</Link>
-    </li>
-  ));
-
-  return <ul className="flex">{navItems}</ul>;
-};
+//const MainNav = () => {
+//  const navItems = getNavLinks().map((item) => (
+//    <li key={item} className="px-3">
+//      <Link to={item === "intro" ? `/` : `/${item}`}>{item}</Link>
+//    </li>
+//  ));
+//
+//  return <ul className="flex">{navItems}</ul>;
+//};
 
 // TODO: Contact Link
-const ContactLink = () => <a href="#contact">Contact</a>;
+const ContactLink = ({ handleClick }) => (
+  <Link
+    to="/contact"
+    className="text-5xl"
+    //openMenu={openMenu}
+    onClick={handleClick}
+  >
+    how to reach me
+  </Link>
+);
 
+export const NavLinks = ({ openMenu, handleClick }) => (
+  <div
+    className={
+      "font-['Italiana'] bg-pale-orange " +
+      (openMenu ? "flex absolute top-0 left-0 z-10" : "hidden")
+    }
+  >
+    {NavList(openMenu, handleClick)}
+  </div>
+);
+const linkColorsArr = [
+  "text-light-red",
+  "text-royal-purple",
+  "text-turquoise",
+  "text-seafoam",
+];
+const NavList = (openMenu, handleClick) => {
+  const navItems = getNavLinks().map((item, index) => {
+    return (
+      <li key={index} className="nav-item">
+        <Link
+          to={item === "intro" ? `/` : `/${item}`}
+          className={`px-3 py-2 flex items-center uppercase font-black text-5xl leading-snug hover:opacity-75 ${linkColorsArr[index]}`}
+          onClick={handleClick}
+        >
+          {item}
+        </Link>
+      </li>
+    );
+  });
+  //  lg:flex-row lg:ml-auto
+  return (
+    <ul
+      className={
+        "flex flex-col list-none justify-center items-start h-screen w-screen" +
+        (openMenu ? " flex flex-col" : "")
+      }
+    >
+      {navItems}
+      <li className="px-3 py-2 uppercase font-black leading-snug hover:opacity-75 text-sunset">
+        <ContactLink onClick={handleClick} />
+      </li>
+    </ul>
+  );
+};
+
+const Hamburger2 = ({ handleClick, openMenu }) => {
+  // const [openMenu, handleClick] = useState(false);
+  // triple bars
+  const closedTopBar = "-translate-y-2 w-6";
+  const closedMiddleBar = "opacity-100 w-6";
+  const closedBottomBar = "translate-y-2 w-6";
+  // x
+  const openTopBar = "translate-y-0 rotate-45 w-7.5";
+  const openMiddleBar = "opacity-0 translate-x-3 w-7.5";
+  const openBottomBar = "translate-y-0 -rotate-45 w-7.5";
+
+  return (
+    <button
+      onClick={() => handleClick()}
+      className={`lg:hidden w-12 flex items-center space-y-2 outline-none focus:outline-none`}
+    >
+      <div className={`w-12 flex items-center justify-center relative`}>
+        <span
+          className={`${
+            openMenu === false ? closedTopBar : openTopBar
+          } transform transition h-0.5 bg-teal absolute dark:bg-coral`}
+        ></span>
+        <span
+          className={`${
+            openMenu === false ? closedMiddleBar : openMiddleBar
+          } transform transition h-0.5 bg-pale-orange absolute dark:bg-blue-oyster`}
+        ></span>
+
+        <span
+          className={`${
+            openMenu === false ? closedBottomBar : openBottomBar
+          } translate-y-2 transform transition h-0.5 bg-light-green absolute dark:bg-sunset`}
+        ></span>
+      </div>
+    </button>
+  );
+};
 /***
  * ? hover -> change
  * ?				>- font color -<

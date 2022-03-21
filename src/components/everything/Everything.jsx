@@ -1,10 +1,9 @@
 import React from "react";
 import PinkAbstract3DModel from "../../assets/images/simon-lee-4wYxcWA5MbI-unsplash.jpg";
-import { Header } from "../header/Header";
 
 export const What = ({ children }) => {
   return (
-    <section className="w-full">
+    <section className="w-full text-turquoise">
       <FirstPage />
       <SecondPage />
       <ThirdPage />
@@ -14,7 +13,6 @@ export const What = ({ children }) => {
 
 const FirstPage = () => (
   <section id="who-splash" className="flex flex-col">
-    {/*<Header />*/}
     <WhoSplashContent />
   </section>
 );
@@ -22,14 +20,16 @@ const FirstPage = () => (
 const WhoSplashContent = () => (
   <main
     id="who-landing"
-    className="flex flex-col items-center justify-center h-screen text-blue-oyster"
+    className="flex flex-col items-center justify-center h-screen"
   >
-    <h1 className="font-bold text-9xl z-10 relative top-64">What.</h1>
+    <h1 className="font-bold text-9xl relative top-64">
+      Everything you want to know
+    </h1>
     <Pink3dBackground />
   </main>
 );
 const Pink3dBackground = () => (
-  <figure className="w-3/4 text-khaki">
+  <figure className="w-3/4">
     <img
       className="m-auto"
       src={PinkAbstract3DModel}
@@ -46,7 +46,7 @@ const Pink3dBackground = () => (
 /** What I Provide */
 // TODO: change to flex
 const SecondPage = () => (
-  <section className="h-screen m-auto text-blue-oyster w-3/5">
+  <section className="h-screen m-auto w-3/5">
     <h6 className="uppercase text-xs pt-80 tracking-wide">academic guide</h6>
     <span>|||</span>
     <h2 className="text-3xl font-bold mt-7 mb-3">
@@ -63,7 +63,7 @@ const SecondPage = () => (
 
 /** Services */
 const ThirdPage = () => (
-  <section className="flex flex-col flex-grow h-screen  m-auto text-blue-oyster w-3/5">
+  <section className="flex flex-col flex-grow h-screen px-10 m-auto">
     <h6 className="uppercase text-xs pt-80 tracking-wide">services</h6>
     <span className="py-2">|||</span>
     <TripleColumnContainer>
