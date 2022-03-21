@@ -78,7 +78,7 @@ const SecondPage = () => (
 /** Services */
 const ThirdPage = () => (
   <SingleColumn addClasses="flex flex-col flex-grow h-screen w-full">
-    <h6 className="uppercase text-xs pt-80 tracking-wide">services</h6>
+    <h6 className="uppercase text-xs pt-80 tracking-wide">service</h6>
     <span className="py-2">|||</span>
     <TripleColumnContainer>
       <section className="flex-1 basis-1/3">
