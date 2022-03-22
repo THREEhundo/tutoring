@@ -74,9 +74,11 @@ const ThirdPage = () => (
 			/>
 			<SingleColumn
 				heading='Subjects'
-				item1='Science (Earth Science, Biology, Chemistry)'
-				item2='Math (Algebra, Geometry, Trigonometry/Algebra II)'
-				item3='Pre-Calc'
+				item1='Science'
+				item2='Earth Science, Biology, Chemistry'
+				item3='Math'
+				item4='Algebra, Geometry, Trigonometry/Algebra II'
+				item5='Pre-Calc'
 			/>
 			<SingleColumn
 				heading='Rate'
@@ -93,14 +95,18 @@ const TripleColumnContainer = ({ children }) => {
 	return <section className='flex w-full py-5 gap-x-10'>{children}</section>
 }
 
-const SingleColumn = ({ heading, item1, item2, item3 }) => {
+const SingleColumn = ({ heading, item1, item2, item3, item4, item5 }) => {
+	let bold
+	heading === 'Subjects' ? (bold = `font-bold`) : (bold = ``)
 	return (
 		<section className='flex-1 basis-1/3'>
 			<h2 className='font-bold text-4xl'>{heading}</h2>
 			<ul className='py-2'>
-				<li className='py-2'>{item1}</li>
+				<li className={`py-2 ${bold}`}>{item1}</li>
 				<li className='py-2'>{item2}</li>
-				{item3 && <li className='py-2'>{item3}</li>}
+				{item3 && <li className={`py-2 ${bold}`}>{item3}</li>}
+				{item4 && <li className='py-2'>{item4}</li>}
+				{item5 && <li className='py-2'>{item5}</li>}
 			</ul>
 		</section>
 	)
