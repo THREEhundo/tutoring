@@ -6,7 +6,7 @@ import { DesktopContainer } from '../generic/DesktopContainer'
 import { HugeHeading } from '../generic/HugeHeading'
 import metalicaGirl from '../../assets/images/pexels-dillon-kydd-5794559.jpeg'
 import bucketsGirl from '../../assets/images/pexels-dominika-roseclay-1172784.jpeg'
-import euniceBaikLogo from '../../assets/euniceBaikLogo.mp4'
+import euniceBaikLogo from '../../assets/final-logo.mp4'
 
 /**
  * ! Intro
